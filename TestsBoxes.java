@@ -35,4 +35,13 @@ public class TestsBoxes {
         b.add(new Thing("truc"));
         b.remove(0);
     }
+    @Test   
+    public void is_open(){
+        Box b = new Box();
+        org.junit.Assert.assertTrue(b.isopen());
+        b.close();
+        org.junit.Assert.assertTrue(b.isclose());
+        b.open();
+        org.junit.Assert.assertTrue(b.isopen());
+    }
 }
