@@ -9,11 +9,36 @@ import java.util.List;
  */
 public class Box {
     private List<Thing> content;
-    private boolean open = true;
+    private boolean open;
     private int capacity;
 
     Box() {
         this.content = new ArrayList<>();
+        this.capacity = -1;
+        this.open = true;
+    }
+
+    public void setCapacity(int cap){
+        this.capacity = cap;
+    }
+    public int capacity(){
+        return this.capacity;
+    }
+
+    public boolean hasRoomFor(Thing truc){
+        if (this.capacity == -1){return true;}
+        return this.capacity >= this.content.size() + truc.volume();
+    }
+
+    public boolean actionAdd(Thing truc){
+        if (isclose()){
+            return false;
+        }
+        if (hasRoomFor(truc)){
+            add(truc);
+            return true;
+        }
+        return false;
     }
 
     public void add(Thing truc){

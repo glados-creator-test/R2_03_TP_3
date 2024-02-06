@@ -11,7 +11,6 @@ public class TestsBoxes {
     public void testBoxCreate() {
         Box b = new Box();
     } /** on veut pouvoir mettre des trucs dedans */
-    
 
     @Test
     public void testBoxAdd() {
@@ -43,5 +42,29 @@ public class TestsBoxes {
         org.junit.Assert.assertTrue(b.isclose());
         b.open();
         org.junit.Assert.assertTrue(b.isopen());
+    }
+
+    @Test
+    public void Thing_volume(){
+        Thing truc = new Thing(5);
+        org.junit.Assert.assertEquals(truc.volume(),5);
+    }
+    @Test
+    public void test_cap(){
+        Box b = new Box();
+        b.setCapacity(5);
+        org.junit.Assert.assertEquals(b.capacity(),5);
+    }
+    @Test
+    public void test_hasroom(){
+        Box b = new Box();
+        b.setCapacity(0);
+        org.junit.Assert.assertEquals(b.hasRoomFor(new Thing(1)),false);
+        b.setCapacity(1);
+        org.junit.Assert.assertEquals(b.hasRoomFor(new Thing(1)),true);
+    }
+    @Test
+    public void test_actionAdd(){
+        
     }
 }
