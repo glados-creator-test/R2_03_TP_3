@@ -6,23 +6,21 @@ import java.util.ArrayList;
  * box
  */
 public class Box {
-    private ArrayList<Object> content = new ArrayList<Object>();
+    private ArrayList<Thing> content = new ArrayList<Thing>();
 
     Box() {
-        this.capacity = this.content.size();
+        this.content = new ArrayList<>();
     }
 
-    public void add(Object truc){
+    public void add(Thing truc){
         this.content.add(truc);
     }
 
-    public boolean contains(Object truc){
+    public boolean contains(Thing truc){
         return this.content.contains(truc);
     }
 
-    public void remove(Object truc) throws Exception{
-        if (!(this.content.remove(truc))){
-            throw new Exception("item non trouver");
-        }
+    public Thing remove(int i) throws Exception{
+        return this.content.remove(i);
     }
 }

@@ -16,8 +16,8 @@ public class TestsBoxes {
     @Test
     public void testBoxAdd() {
         Box b = new Box();
-        b.add("truc1");
-        b.add("truc2");
+        b.add(new Thing("truc1"));
+        b.add(new Thing("truc2"));
     }
 
     @Test(expected = ArithmeticException.class)
@@ -27,12 +27,12 @@ public class TestsBoxes {
     @Test(expected = Exception.class)
     public void remove_not_in() throws Exception{
         Box b = new Box();
-        b.remove(new Box());
+        b.remove(0);
     }
     @Test
     public void remove_in() throws Exception {
         Box b = new Box();
-        b.add(42);
-        b.remove(42);
+        b.add(new Thing("truc"));
+        b.remove(0);
     }
 }
