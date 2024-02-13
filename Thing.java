@@ -21,4 +21,6 @@ public class Thing{
     public String getName() {
         return this.name;
     }
+
+    public void tobemerge() {}
 }
