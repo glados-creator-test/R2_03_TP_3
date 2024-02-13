@@ -23,4 +23,5 @@ public class Thing{
     }
 
     public void tobemerge() {}
+    public void mainbranche(){}
 }
