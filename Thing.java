@@ -13,4 +13,8 @@ public class Thing{
     public int volume(){
         return this.vol;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
