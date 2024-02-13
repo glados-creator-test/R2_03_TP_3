@@ -13,4 +13,9 @@ public class Thing{
     public int volume(){
         return this.vol;
     }
+
+
+    public String getName() {
+        return this.name;
+    }
 }
