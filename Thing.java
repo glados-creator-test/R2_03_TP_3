@@ -22,6 +22,5 @@ public class Thing{
         return this.name;
     }
 
-    public void tobemerge() {}
-    public void mainbranche(){}
+    public void forked() {}
 }
